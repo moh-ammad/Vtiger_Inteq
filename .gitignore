@@ -1,0 +1,9 @@
+# Node and build folders
+node_modules/
+dist/
+
+# Common data and config files
+*.json
+*.log
+*.env
+*.csv
