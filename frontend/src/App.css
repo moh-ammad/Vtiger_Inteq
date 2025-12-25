@@ -1,0 +1,208 @@
+/* Component-specific styles and advanced effects */
+
+@layer components {
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .card-interactive {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer active:scale-[0.98];
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl;
+    @apply shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-500/50;
+    @apply transform hover:scale-105 active:scale-95;
+    @apply transition-all duration-200;
+    @apply disabled:from-slate-300 disabled:to-slate-400 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-slate-700 font-bold rounded-xl;
+    @apply border-2 border-slate-200 shadow-md;
+    @apply hover:bg-slate-50 hover:border-slate-300;
+    @apply focus:outline-none focus:ring-4 focus:ring-slate-500/20;
+    @apply transform hover:scale-105 active:scale-95;
+    @apply transition-all duration-200;
+  }
+
+  .btn-success {
+    @apply px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold rounded-xl;
+    @apply shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40;
+    @apply focus:outline-none focus:ring-4 focus:ring-green-500/50;
+    @apply transform hover:scale-105 active:scale-95;
+    @apply transition-all duration-200;
+  }
+
+  /* Input field styles */
+  .input-field {
+    @apply w-full px-4 py-3.5 bg-slate-50/50 border-2 border-slate-200 rounded-xl;
+    @apply text-slate-900 placeholder-slate-400 font-medium;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500;
+    @apply hover:border-slate-300 transition-all duration-200 shadow-sm;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2;
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 bg-blue-50 text-blue-700 border-blue-200;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 bg-green-50 text-green-700 border-green-200;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 bg-red-50 text-red-700 border-red-200;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 bg-yellow-50 text-yellow-700 border-yellow-200;
+  }
+
+  /* Section header with pattern */
+  .section-header {
+    @apply relative overflow-hidden px-7 py-6;
+    @apply bg-gradient-to-br;
+  }
+
+  .section-header::before {
+    content: '';
+    @apply absolute inset-0 opacity-20;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='white' stroke-width='0.5' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply inline-block w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 bg-[length:200%_100%] animate-pulse rounded;
+  }
+}
+
+@layer utilities {
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* Hover glow effect */
+  .hover-glow-blue:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+
+  .hover-glow-green:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+  }
+
+  /* Focus ring with offset */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:ring-offset-2;
+  }
+
+  /* Truncate text with tooltip */
+  .truncate-tooltip {
+    @apply truncate cursor-help;
+  }
+
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(0,0,0,0.05)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");
+  }
+
+  /* Dot pattern background */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Responsive text sizing */
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  /* Custom aspect ratios */
+  .aspect-card {
+    @apply aspect-[4/3];
+  }
+
+  .aspect-banner {
+    @apply aspect-[21/9];
+  }
+}
+
+/* Additional animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
